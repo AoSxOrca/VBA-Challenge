@@ -38,6 +38,12 @@ For Each ws In ThisWorkbook.Worksheets
         Cells(i, 12).Value = percentageChange
         Cells(i, 13).Value = totalVolume
 
+        If yearlyChange > 0 Then
+            Cells(i, 11).Interior.Color = vbGreen
+        ElseIf yearlyChange < 0 Then
+            Cells(i, 11).Interior.Color = vbRed
+        End If
+
         If percentageChange > greatestIncrease Then
             greatestIncrease = percentageChange
         End If
